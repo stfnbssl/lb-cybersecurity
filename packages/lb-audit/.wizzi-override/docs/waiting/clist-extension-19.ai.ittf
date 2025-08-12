@@ -1,0 +1,194 @@
+ai lab
+    api-url http://localhost:3000
+    call clist-item-16.3.1
+        description clist extension of item 16.3.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "16.3.1"
+                    area "Physical security"
+                    category "Failure resilience"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    "NIST CSF" "PR.PT-4"
+                    description "L’alimentazione elettrica nei locali che ospitano i server è ridondata mediante
+                        +b UPS, gruppi elettrogeni e linee di alimentazione appoggiate a provider diversi?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-
+        description clist extension of item 
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd ""
+                    area ""
+                    category ""
+                    description "undefined"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-
+        description clist extension of item 
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd ""
+                    area ""
+                    category ""
+                    description "undefined"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true

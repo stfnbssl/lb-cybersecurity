@@ -1,0 +1,691 @@
+ai lab
+    api-url http://localhost:3000
+    call clist-item-14.1.6
+        description clist extension of item 14.1.6
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.1.6"
+                    area "Operation Technology addendum"
+                    category "Accesso ai sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma i"
+                    "REG. MACCHINE" "Allegato III - 1.2_n_Allegato III - 3.3"
+                    "EN 303 645" "SP.03.05_n_SP.03.07_n_SP.04.02"
+                    EuCRA "Allegato I.1"
+                    description "Il sistema di controllo supporta, dove previsto, l'autenticazione standard PKI
+                        +b basata su certificati?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.1.7
+        description clist extension of item 14.1.7
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.1.7"
+                    area "Operation Technology addendum"
+                    category "Accesso ai sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma i"
+                    "REG. MACCHINE" "Allegato III - 1.2_n_Allegato III - 3.3"
+                    "EN 303 645" "SP.09.01"
+                    EuCRA "Allegato I.1"
+                    description "Il sistema di controllo consente agli utenti autorizzati di definire e
+                        +b modificare la mappatura delle autorizzazioni e dei ruoli?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.1.8
+        description clist extension of item 14.1.8
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.1.8"
+                    area "Operation Technology addendum"
+                    category "Accesso ai sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma i"
+                    "REG. MACCHINE" "Allegato III - 1.2_n_Allegato III - 3.3"
+                    "EN 303 645" "SP.03.07_n_SP.04.02"
+                    EuCRA "Allegato I.1"
+                    description "Il sistema di controllo prevede l'autenticazione e l'autorizzazione dei
+                        +b dispositivi e dei processi software?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.1.9
+        description clist extension of item 14.1.9
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.1.9"
+                    area "Operation Technology addendum"
+                    category "Accesso ai sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma i"
+                    "REG. MACCHINE" "Allegato III - 1.2_n_Allegato III - 3.3"
+                    "EN 303 645" "SP.05.03_n_SP.05.05_n_SP.07.01_n_SP.07.02_n_SP.07.03_n_SP.07.04"
+                    EuCRA "Allegato I.1"
+                    description "Le applicazioni utilizzate nei sistemi di controllo prevedono meccanismi sicuri
+                        +b di accesso remoto con istruzioni di dettaglio a supporto?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.1.10
+        description clist extension of item 14.1.10
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.1.10"
+                    area "Operation Technology addendum"
+                    category "Accesso ai sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma i"
+                    "REG. MACCHINE" "Allegato III - 1.2_n_Allegato III - 3.3"
+                    "EN 303 645" "SP.03.06"
+                    EuCRA "Allegato I.1"
+                    description "Le workstation utilizzate a supporto dei sistemi di controllo industriale
+                        +b prevedono la capacità di supportare il blocco delle sessioni?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.2.1
+        description clist extension of item 14.2.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.2.1"
+                    area "Operation Technology addendum"
+                    category "Secure configuration sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma e, g"
+                    "REG. MACCHINE" "Artt. 10 - 11"
+                    "EN 303 645" "SP.03.05_n_SP.05.09"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Il sistema di controllo ha la possibilità di disabilitare le funzionalità non
+                        +b necessarie?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.2.2
+        description clist extension of item 14.2.2
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.2.2"
+                    area "Operation Technology addendum"
+                    category "Secure configuration sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma e, g"
+                    "REG. MACCHINE" "Artt. 10 - 11"
+                    "EN 303 645" "SP.06.01_n_SP.06.02_n_SP.06.03_n_SP.07.02_n_SP.10.02"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Vengono fornite istruzioni necessarie per l’installazione, la configurazione e
+                        +b il corretto aggiornamento dei meccanismi di protezione testati e verificati per
+                        +b le Automation Solution?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.2.3
+        description clist extension of item 14.2.3
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.2.3"
+                    area "Operation Technology addendum"
+                    category "Secure configuration sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma e, h"
+                    "REG. MACCHINE" "Artt. 10 - 11"
+                    "EN 303 645" "SP.03.08_n_SP.05.02_n_SP.07.04"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Viene protetta l’integrità delle sessioni (per esempio tramite protocolli
+                        +b criptati, robusti algoritmi di hashing/check sum)?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.2.4
+        description clist extension of item 14.2.4
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.2.4"
+                    area "Operation Technology addendum"
+                    category "Secure configuration sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    "REG. MACCHINE" "Artt. 10 - 11"
+                    "EN 303 645" "SP.02.01_n_SP.02.03_n_SP.03.02_n_SP.04.01_n_SP.06.01_n_SP.06.02_n_SP.06.03"
+                    EuCRA "Art. 10.7_n_Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "La documentazione relativa all’architettura dell’Automation Solution,
+                        +b comprensiva dell’elenco dei componenti installati con le rispettive proprietà e
+                        +b interfacce associate, viene condivisa da parte del fornitore?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-14.2.5
+        description clist extension of item 14.2.5
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "14.2.5"
+                    area "Operation Technology addendum"
+                    category "Secure configuration sistemi di controllo industriale"
+                    NIS2 "Art. 21, par. 2, comma e, h"
+                    "REG. MACCHINE" "Artt. 10 - 11"
+                    "EN 303 645" "SP.03.08_n_SP.03.10_n_SP.07.04"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Il sistema di controllo industriale prevede la capacità di garantire l'utilizzo
+                        +b della crittografia per proteggere i dati, in transito o a riposo, utilizzati
+                        +b per l'amministrazione del dispositivo di rete (ad esempio, password, dati di
+                        +b configurazione) e identificati come dati da salvaguardare?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true

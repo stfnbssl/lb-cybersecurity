@@ -1,0 +1,699 @@
+ai lab
+    api-url http://localhost:3000
+    call clist-item-2.9.1
+        description clist extension of item 2.9.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.9.1"
+                    area "Continuità operativa"
+                    category "Analisi degli impatti e dei rischi"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "ID.RA-01"
+                    EuCRA "Art. 10.2_n_Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Il processo di Continuità Operativa prevede lo svolgimento periodico di
+                        +b attività quali Business Impact Analysis e Risk Assessment?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.9.2
+        description clist extension of item 2.9.2
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.9.2"
+                    area "Continuità operativa"
+                    category "Analisi degli impatti e dei rischi"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "ID.RA-01"
+                    EuCRA "Art. 10.2_n_Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Le risultanze emerse dalle attività di Business Impact Analysis e Risk
+                        +b Assessment sono validate dalla direzione?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.10.1
+        description clist extension of item 2.10.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.10.1"
+                    area "Continuità operativa"
+                    category "Riesame direzione"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "ID.RA-06"
+                    EuCRA "Art. 10.2_n_Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Le azioni di rimedio emerse dalle attività di Business Impact Analysis e Risk
+                        +b Assessment sono periodicamente monitorate?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.11.1
+        description clist extension of item 2.11.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.11.1"
+                    area "Continuità operativa"
+                    category "Digital - High availability & Fault tolerance"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "ID.RA-01"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Gli asset critici (p.e. server, stampanti, personal computer, fax, etc.) che
+                        +b supportano l'erogazione dei servizi di fornitura sono ridondati (e.g.
+                        +b stoccaggio di forniture aggiuntive in un altro luogo, stoccaggio di materiali
+                        +b presso magazzini)?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.12.1
+        description clist extension of item 2.12.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.12.1"
+                    area "Continuità operativa"
+                    category "Digital - Disaster Recovery"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISA_n_62443_n_${'('}2-4) "SP.12.09"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "RC.RP-01"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "I sistemi sono inclusi all'interno di un piano aggiornato di Disaster Recovery?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.12.2
+        description clist extension of item 2.12.2
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.12.2"
+                    area "Continuità operativa"
+                    category "Digital - Disaster Recovery"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISA_n_62443_n_${'('}2-4) "SP.12.09"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "RC.RP-01"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Sono previsti siti dedicati alle attività di Disaster Recovery ubicati a
+                        +b distanza adeguata dai datacenter primari?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.13.1
+        description clist extension of item 2.13.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.13.1"
+                    area "Continuità operativa"
+                    category "Digital - Backup execution"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISA_n_62443_n_${'('}2-4) "SP.12.01"
+                    ISO22301 "8.3_n_8.4"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "PR.DS-11"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Sono definiti processi e controlli per la verifica dell'esito dei backup?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.13.2
+        description clist extension of item 2.13.2
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.13.2"
+                    area "Continuità operativa"
+                    category "Digital - Backup execution"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISA_n_62443_n_${'('}2-4) "SP.12.01"
+                    ISO22301 "8.3_n_8.4"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "PR.DS-11"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Le copie fisiche di backup sono mantenute in locali distinti ed opportunamente
+                        +b protetti da quelli dei sistemi di produzione?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.13.3
+        description clist extension of item 2.13.3
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.13.3"
+                    area "Continuità operativa"
+                    category "Digital - Backup execution"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISA_n_62443_n_${'('}2-4) "SP.12.01"
+                    ISO22301 "8.3_n_8.4"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "PR.DS-11"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "L'infrastruttura di backup è segregata rispetto alla rete di produzione?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-2.14.1
+        description clist extension of item 2.14.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "2.14.1"
+                    area "Continuità operativa"
+                    category "Digital - Protezione dei backup"
+                    NIS2 "Art. 21, par. 2, comma c"
+                    ISA_n_62443_n_${'('}2-4) "SP.12.01"
+                    ISO_n_27001 "A.5.30"
+                    "NIST CSF" "PR.DS-11"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Sono previste attività periodiche di test sul restore dei dati di backup?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true

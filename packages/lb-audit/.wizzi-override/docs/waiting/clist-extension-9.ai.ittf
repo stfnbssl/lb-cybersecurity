@@ -1,0 +1,710 @@
+ai lab
+    api-url http://localhost:3000
+    call clist-item-8.2.2
+        description clist extension of item 8.2.2
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.2.2"
+                    area "Cloud security"
+                    category "Security Integrations"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    GDPR "Art. 25"
+                    ISO_n_27001 "A.5.23"
+                    "NIST CSF" "PR.DS-6_n_PR.DS-7_n_PR.IP-2"
+                    "CSA CAIQ" "AIS-04"
+                    ISO27017 "14.2.1"
+                    description "Le API sono configurate in modo da non memorizzare informazioni personali
+                        +b all'interno dei log (p.e. passwords, indirizzi email, etc..)?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.2.3
+        description clist extension of item 8.2.3
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.2.3"
+                    area "Cloud security"
+                    category "Security Integrations"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.23"
+                    "NIST CSF" "PR.DS-6_n_PR.DS-7_n_PR.IP-2"
+                    "CSA CAIQ" "AIS-04"
+                    ISO27017 "14.2.1"
+                    EuCRA "Allegato I.1"
+                    description "In caso di API, gli ID memorizzati nell'oggetto sessione vengono utilizzati al
+                        +b posto degli ID inviati dal client? Vengono utilizzati ID casuali che non
+                        +b possono essere forzati (UUID)?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.2.4
+        description clist extension of item 8.2.4
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.2.4"
+                    area "Cloud security"
+                    category "Security Integrations"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.23"
+                    "NIST CSF" "PR.DS-6_n_PR.DS-7_n_PR.IP-2"
+                    "CSA CAIQ" "AIS-04"
+                    ISO27017 "14.2.1"
+                    EuCRA "Allegato I.1"
+                    description "Sono previste ed attuate logiche di API-rate limiting volte ad assicurare la
+                        +b protezione della disponibilità del servizio?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.2.5
+        description clist extension of item 8.2.5
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.2.5"
+                    area "Cloud security"
+                    category "Security Integrations"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.23"
+                    "NIST CSF" "PR.DS-6_n_PR.DS-7_n_PR.IP-2"
+                    "CSA CAIQ" "AIS-04"
+                    ISO27017 "14.2.1"
+                    EuCRA "Allegato I.1"
+                    description "Il servizio Cloud supporta i connettori necessari per log ingestion su
+                        +b tecnologie SIEM-SOAR?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.3.1
+        description clist extension of item 8.3.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.3.1"
+                    area "Cloud security"
+                    category "Cloud virtualization"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.23"
+                    "NIST CSF" "PR.AC-7_n_PR.PT-4"
+                    "CSA CAIQ" "IVS-03"
+                    ISO27017 "CLD.9.5.1_n_CLD.9.5.2"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Le politiche e le procedure di sicurezza per l'infrastruttura e la
+                        +b virtualizzazione sono stabilite, documentate, approvate, comunicate, applicate,
+                        +b valutate e mantenute?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.3.2
+        description clist extension of item 8.3.2
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.3.2"
+                    area "Cloud security"
+                    category "Cloud virtualization"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.23"
+                    "NIST CSF" "PR.AC-7_n_PR.PT-4"
+                    "CSA CAIQ" "IVS-03"
+                    ISO27017 "CLD.9.5.1_n_CLD.9.5.2"
+                    EuCRA "Allegato I.1"
+                    description "Le politiche e le procedure di sicurezza per l'infrastruttura e la
+                        +b virtualizzazione sono esaminate e aggiornate almeno annualmente?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.3.3
+        description clist extension of item 8.3.3
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.3.3"
+                    area "Cloud security"
+                    category "Cloud virtualization"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.23"
+                    "NIST CSF" "PR.IP-1_n_PR.PT-3"
+                    "CSA CAIQ" "IVS-04"
+                    ISO27017 "CLD.9.5.1_n_CLD.9.5.2"
+                    EuCRA "Allegato I.1"
+                    description "La disponibilità, la qualità e la capacità delle risorse sono pianificate e
+                        +b monitorate in modo tale da garantire le prestazioni di sistema richieste?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.3.4
+        description clist extension of item 8.3.4
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.3.4"
+                    area "Cloud security"
+                    category "Cloud virtualization"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.23"
+                    "NIST CSF" "PR.IP-1_n_PR.PT-3"
+                    "CSA CAIQ" "IVS-04"
+                    ISO27017 "CLD.9.5.1_n_CLD.9.5.2"
+                    EuCRA "Allegato I.1"
+                    description "Ogni host e guest OS, hypervisor o piano di controllo dell'infrastruttura è
+                        +b configurato con sicurezza (secondo le rispettive linee guida) e supportato da
+                        +b controlli tecnici di sicurezza?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.4.1
+        description clist extension of item 8.4.1
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.4.1"
+                    area "Cloud security"
+                    category "Data protection"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.31"
+                    "NIST CSF" "PR.DS-1_n_PR.DS-2_n_PR.DS-5"
+                    "CSA CAIQ" "DSP-17"
+                    ISO27017 "A.15.2.1_n_A.15.2.2_n_A.18.1.3"
+                    EuCRA "Allegato I.1"
+                    "Exe. Ord. on Improving the Nation’s Cybersecurity" "Sec. 4 lect. e"
+                    description "Il Cloud Service Provider consente di estrarre i dati strutturati e non
+                        +b strutturati dell'organizzazione su richiesta in un formato standard del settore
+                        +b (p.e. .doc, .xls, xml, .pdf, registri e file flat)?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true
+    call clist-item-8.4.2
+        description clist extension of item 8.4.2
+        message 
+            role system
+            content Sei un esperto di CyberSecurity che assisti auditors nel produrre una checklist.
+                \b Per ogni item, fornisci:\n
+                \b 1. Una spegazione dettagliata.\n
+                \b 2. Un glossario dei termini più tecnici, ciascuno con una definizione e un link a risorse rileveanti sul web per rapprofondimenti.\n
+                \b 3. Link rilevanti a standards, best practices, o documentazione correlata all'item.\n
+                \b 4. Un output in formato JSON, senza caratteri markdown, strutturato come rischiesto nel response_format.\n
+        message 
+            role user
+            json_content 
+                { 
+                    idd "8.4.2"
+                    area "Cloud security"
+                    category "Data protection"
+                    NIS2 "Art. 21, par. 2, comma e"
+                    ISO_n_27001 "A.5.31"
+                    "NIST CSF" "PR.DS-1_n_PR.DS-2_n_PR.DS-5"
+                    "CSA CAIQ" "DSP-17"
+                    ISO27017 "A.15.2.1_n_A.15.2.2_n_A.18.1.3"
+                    EuCRA "Allegato I.1"
+                    description "Le applicazioni e le infrastrutture sono progettate, sviluppate, implementate e
+                        +b configurate in modo tale che l'accesso dei CSP (Cloud Service Provider) e dei
+                        +b Cloud Service Customer (tenant) sia appropriatamente segmentato, segregato,
+                        +b monitorato e limitato rispetto agli altri tenant?"
+        response_format 
+            { 
+                type "json_schema"
+                { json_schema
+                    name "checklist_explanation"
+                    { schema
+                        type "object"
+                        { properties
+                            { detailed_explanation
+                                type "string"
+                            { glossary
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { term
+                                            type "string"
+                                        { definition
+                                            type "string"
+                                        { link
+                                            type "string"
+                                    [ required
+                                        "term" 
+                                        "definition" 
+                                        "link" 
+                                    additionalProperties false
+                            { related_links
+                                type "array"
+                                { items
+                                    type "object"
+                                    { properties
+                                        { title
+                                            type "string"
+                                        { url
+                                            type "string"
+                                    [ required
+                                        "title" 
+                                        "url" 
+                                    additionalProperties false
+                        [ required
+                            "detailed_explanation" 
+                            "glossary" 
+                            "related_links" 
+                        additionalProperties false
+                    strict true

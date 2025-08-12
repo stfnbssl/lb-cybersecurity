@@ -1,0 +1,2752 @@
+{
+    "name": "lb-audit",
+    "npmName": "",
+    "version": "0.0.1",
+    "description": "Logbot audit",
+    "author": {
+        "name": "Stefano Bassoli",
+        "email": "stfn.bssl@gmail.com"
+    },
+    "license": {
+        "type": "[object Object]",
+        "url": ""
+    },
+    "github": {
+        "userid": "stfnbssl"
+    },
+    "Config": {
+        "ai": {
+            "product_supplier": {
+                "name": "breton"
+            }
+        }
+    },
+    "Build": {
+        "utils": {}
+    },
+    "Documents": {
+        "legislations": [
+            {
+                "name": "ISA/IEC 62443",
+                "documents": [
+                    {
+                        "Code": "62443-1-1",
+                        "Titolo": "Concepts and Models",
+                        "Sintesi": "Pubblicato inizialmente nel 2007, questo documento introduce i concetti fondamentali e la struttura della serie ISA/IEC 62443. Fornisce una panoramica dei requisiti di sicurezza informatica per i sistemi di automazione industriale (IACS) e definisce modelli fondamentali come il modello a zone e condotti."
+                    },
+                    {
+                        "Code": "62443-1-2",
+                        "Titolo": "Master Glossary of Terms and Abbreviations",
+                        "Sintesi": "Fornisce una terminologia standardizzata e un glossario di abbreviazioni utilizzate in tutta la serie 62443, facilitando una comprensione coerente tra i documenti."
+                    },
+                    {
+                        "Code": "62443-1-3",
+                        "Titolo": "System Security Compliance Metrics",
+                        "Sintesi": "Definisce le metriche e i metodi per valutare la conformità ai requisiti di sicurezza dei sistemi IACS. Supporta la misurazione oggettiva delle implementazioni di sicurezza."
+                    },
+                    {
+                        "Code": "62443-2-1",
+                        "Titolo": "Establishing an Industrial Automation and Control System Security Program",
+                        "Sintesi": "Fornisce linee guida per sviluppare e gestire un programma di sicurezza informatica per sistemi IACS. Include suggerimenti per la gestione dei rischi e la pianificazione della sicurezza."
+                    },
+                    {
+                        "Code": "62443-2-2",
+                        "Titolo": "Security Operations for Industrial Automation and Control Systems",
+                        "Sintesi": "Descrive le migliori pratiche operative per garantire la sicurezza continua nei sistemi IACS, come il monitoraggio, la gestione delle vulnerabilità e le risposte agli incidenti."
+                    },
+                    {
+                        "Code": "62443-2-3",
+                        "Titolo": "Patch Management in the IACS Environment",
+                        "Sintesi": "Fornisce linee guida per la gestione delle patch nei sistemi IACS, affrontando le peculiarità di ambienti industriali critici."
+                    },
+                    {
+                        "Code": "62443-2-4",
+                        "Titolo": "Requirements for IACS Solution Suppliers",
+                        "Sintesi": "Specifica i requisiti di sicurezza per i fornitori di soluzioni IACS, supportando la creazione di soluzioni sicure e conformi."
+                    },
+                    {
+                        "Code": "62443-3-1",
+                        "Titolo": "Security Technologies for Industrial Automation and Control Systems",
+                        "Sintesi": "Fornisce una panoramica delle tecnologie di sicurezza utilizzabili per proteggere i sistemi IACS, come firewall, autenticazione e crittografia."
+                    },
+                    {
+                        "Code": "62443-3-2",
+                        "Titolo": "Security Risk Assessment and System Design",
+                        "Sintesi": "Stabilisce un processo di valutazione dei rischi e progettazione dei sistemi sicuri, con un focus sulla segmentazione in zone e condotti."
+                    },
+                    {
+                        "Code": "62443-3-3",
+                        "Titolo": "System Security Requirements and Security Levels",
+                        "Sintesi": "Definisce i requisiti di sicurezza per i sistemi IACS, categorizzati in livelli di sicurezza (SL), che riflettono la robustezza delle misure di protezione."
+                    },
+                    {
+                        "Code": "62443-4-1",
+                        "Titolo": "Secure Product Development Lifecycle Requirements",
+                        "Sintesi": "Specifica i requisiti per un ciclo di vita di sviluppo sicuro per prodotti destinati a sistemi IACS. Include pratiche come la gestione delle vulnerabilità e la verifica della sicurezza."
+                    },
+                    {
+                        "Code": "62443-4-2",
+                        "Titolo": "Technical Security Requirements for IACS Components",
+                        "Sintesi": "Descrive i requisiti tecnici per i componenti individuali degli IACS, come controller, sensori e software, in conformità ai livelli di sicurezza definiti."
+                    }
+                ]
+            }
+        ]
+    },
+    "Data": {
+        "classifiers": [
+            {
+                "name": "ambiti",
+                "label": "Ambiti",
+                "property": "Ambito"
+            },
+            {
+                "name": "categorie",
+                "label": "Categorie",
+                "property": "Categoria"
+            },
+            {
+                "name": "perimetri",
+                "label": "Perimetri",
+                "property": "Perimetro"
+            },
+            {
+                "name": "maturità",
+                "label": "Maturità",
+                "property": "Maturità"
+            },
+            {
+                "name": "NIS2",
+                "label": "NIS2",
+                "property": "NIS2",
+                "isSpecification": true
+            },
+            {
+                "name": "ISA_62443",
+                "label": "ISA 62443 (2-4)",
+                "property": "ISA_n_62443_n_(2-4)",
+                "isSpecification": true
+            },
+            {
+                "name": "RegolamentoMacchine",
+                "label": "Regolamento macchine",
+                "property": "REG. MACCHINE",
+                "isSpecification": true,
+                "spec": "regolamento_macchine_UE2023_1230"
+            },
+            {
+                "name": "ISO22301",
+                "label": "ISO22301",
+                "property": "ISO22301",
+                "isSpecification": true
+            },
+            {
+                "name": "GDPR",
+                "label": "GDPR",
+                "property": "GDPR",
+                "isSpecification": true
+            },
+            {
+                "name": "EN_303_645",
+                "label": "EN 303 645",
+                "property": "EN 303 645",
+                "isSpecification": true
+            },
+            {
+                "name": "ISO_n_27001",
+                "label": "ISO 27001",
+                "property": "ISO_n_27001",
+                "isSpecification": true
+            },
+            {
+                "name": "NIST_CSF",
+                "label": "NIST CSF",
+                "property": "NIST CSF",
+                "isSpecification": true
+            },
+            {
+                "name": "CSA_CAIQ",
+                "label": "CSA CAIQ",
+                "property": "CSA CAIQ",
+                "isSpecification": true
+            },
+            {
+                "name": "ISO27017",
+                "label": "ISO27017",
+                "property": "ISO27017",
+                "isSpecification": true
+            },
+            {
+                "name": "EuCRA",
+                "label": "EuCRA",
+                "property": "EuCRA",
+                "isSpecification": true
+            },
+            {
+                "name": "Improving_Nation_Cybersecurity",
+                "label": "Exe. Ord. on Improving the Nation’s Cybersecurity",
+                "property": "Exe. Ord. on Improving the Nation’s Cybersecurity",
+                "isSpecification": true
+            },
+            {
+                "name": "ID",
+                "label": "ID",
+                "property": "ID"
+            },
+            {
+                "name": "IDD",
+                "label": "IDD",
+                "property": "IDD"
+            },
+            {
+                "name": "Cancelletti",
+                "label": "#",
+                "property": "#"
+            }
+        ]
+    },
+    "root_prompts": {
+        "product_suppliers_search": {
+            "items": [
+                {
+                    "location": "Veneto region, Italy",
+                    "sales": ">50 million euros",
+                    "number_of_firms_to_extract": 10
+                }
+            ]
+        }
+    },
+    "product_suppliers": {
+        "breton": {
+            "manufacturer": "Breton Spa",
+            "machine_types": [
+                {
+                    "type": "CNC Machining Centers",
+                    "description": "High-precision CNC machines for stone and metalworking, featuring multi-axis control for complex geometries.",
+                    "supported_protocols": [
+                        "OPC UA with Basic256Sha256",
+                        "PROFINET with PN Security",
+                        "EtherNet/IP with CIP Security",
+                        "Modbus TCP with TLS"
+                    ]
+                },
+                {
+                    "type": "Stone Cutting Machines",
+                    "description": "Automated saws for cutting granite and marble with high-speed, water-cooled blades.",
+                    "supported_protocols": [
+                        "OPC UA with Basic256Sha256",
+                        "PROFINET with PN Security",
+                        "MQTT with TLS",
+                        "EtherCAT with Secure Profile"
+                    ]
+                },
+                {
+                    "type": "Polishing Machines",
+                    "description": "Machines for surface finishing of stone, equipped with automated abrasive tools and precision sensors.",
+                    "supported_protocols": [
+                        "OPC UA with Basic256Sha256",
+                        "PROFINET with PN Security",
+                        "EtherNet/IP with CIP Security",
+                        "S7comm with Secure Authentication"
+                    ]
+                },
+                {
+                    "type": "Composite Material Processing Lines",
+                    "description": "Integrated systems for cutting, shaping, and curing composite materials for aerospace and automotive.",
+                    "supported_protocols": [
+                        "OPC UA with Basic256Sha256",
+                        "PROFINET with PN Security",
+                        "MQTT with TLS",
+                        "CANopen with Secure Extensions"
+                    ]
+                }
+            ],
+            "applications": [
+                {
+                    "name": "Natural Stone Processing",
+                    "criticality": "High",
+                    "description": "Cutting and polishing marble and granite for construction, requiring high precision to avoid material waste."
+                },
+                {
+                    "name": "Metalworking for Precision Parts",
+                    "criticality": "High",
+                    "description": "Machining metal components for industrial equipment, critical for maintaining tight tolerances."
+                },
+                {
+                    "name": "Composite Material Fabrication",
+                    "criticality": "Medium",
+                    "description": "Producing lightweight composite parts for aerospace, ensuring structural integrity and quality."
+                },
+                {
+                    "name": "Surface Finishing for Decorative Stone",
+                    "criticality": "Low",
+                    "description": "Polishing stone surfaces for aesthetic applications, with minimal operational impact if disrupted."
+                }
+            ],
+            "key_features": [
+                {
+                    "feature": "High-Precision CNC Control Systems",
+                    "description": "PLC-based systems with sub-millimeter accuracy for complex machining tasks.",
+                    "security_support": [
+                        "CR1: Identification and Authentication Control",
+                        "CR3: System Integrity"
+                    ]
+                },
+                {
+                    "feature": "Secure Remote Access",
+                    "description": "Enables remote diagnostics and updates via encrypted channels for maintenance.",
+                    "security_support": [
+                        "CR4: Data Confidentiality",
+                        "CR5: Restricted Data Flow"
+                    ]
+                },
+                {
+                    "feature": "Firmware Signing",
+                    "description": "Ensures only verified firmware is loaded, preventing unauthorized modifications.",
+                    "security_support": [
+                        "CR3: System Integrity",
+                        "CR6: Timely Response to Events"
+                    ]
+                },
+                {
+                    "feature": "Network Segmentation Support",
+                    "description": "Integrates with OT network zones to isolate critical control functions.",
+                    "security_support": [
+                        "CR5: Restricted Data Flow",
+                        "CR7: Resource Availability"
+                    ]
+                },
+                {
+                    "feature": "Incident Logging",
+                    "description": "Records security events for analysis, ensuring traceability of unauthorized access.",
+                    "security_support": [
+                        "CR6: Timely Response to Events",
+                        "CR3: System Integrity"
+                    ]
+                }
+            ],
+            "operational_environment": {
+                "description": "Industrial facilities for stone, composite, and metal processing with high dust and noise levels.",
+                "conditions": {
+                    "temperature_range": "5-40°C",
+                    "dust_level": "High (stone processing environments)",
+                    "network_type": "Segmented industrial networks with DMZ for IT-OT integration"
+                }
+            },
+            "industry_4_0_compliance": true,
+            "security_profile": {
+                "supported_sl": [
+                    "SL 1",
+                    "SL 2",
+                    "SL 3"
+                ],
+                "certifications": [
+                    "IEC 62443-4-2",
+                    "IEC 62443-4-1"
+                ],
+                "common_threats": [
+                    "Ransomware targeting control systems, disrupting production and causing downtime.",
+                    "MitM attacks on industrial protocols, compromising data integrity.",
+                    "Data manipulation in HMI interfaces, leading to incorrect process parameters."
+                ]
+            },
+            "product_version": {
+                "current_version": "2025.1",
+                "last_updated": "2025-06-01"
+            },
+            "assumptions_justifications": [
+                {
+                    "assumption": "Machines incorporate advanced automation and control systems.",
+                    "justification": "Based on Breton’s leadership in CNC machinery and ISO 23125 standards for machine tools."
+                },
+                {
+                    "assumption": "Support for secure industrial protocols like OPC UA and PROFINET.",
+                    "justification": "Aligned with IEC 62443-4-2 CR5, ensuring secure data flow in IACS environments."
+                },
+                {
+                    "assumption": "High dust levels in operational environment require robust physical security.",
+                    "justification": "Stone processing generates dust, necessitating IEC 62443-3-3 physical access controls."
+                },
+                {
+                    "assumption": "Machines support Industry 4.0 features like digital twins.",
+                    "justification": "Breton’s advanced machinery aligns with Industry 4.0 trends per NIST SP 800-82."
+                },
+                {
+                    "assumption": "Firmware signing and incident logging are implemented.",
+                    "justification": "Required by IEC 62443-4-2 CR3 and CR6 for system integrity and event response."
+                }
+            ]
+        }
+    },
+    "schemas": {
+        "product_supplier_ai_step_1": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "array",
+            "description": "JSON schema for List of Product Suppliers of a certail location extracted with ai search",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "sales_eur": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "machine_types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "iec_62443": {
+                        "type": "object",
+                        "properties": {
+                            "relevance": {
+                                "type": "string"
+                            },
+                            "requirements": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "required": [
+                            "relevance",
+                            "requirements"
+                        ]
+                    },
+                    "contact_details": {
+                        "type": "object",
+                        "properties": {
+                            "address": {
+                                "type": "string"
+                            },
+                            "phone": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "website": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "address",
+                            "phone",
+                            "email",
+                            "website"
+                        ]
+                    },
+                    "source": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "machine_types",
+                    "iec_62443_relevance",
+                    "contact_details"
+                ]
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "required": [
+                "items"
+            ]
+        },
+        "product_supplier_ai_step_2": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for Product Supplier ai produced context description",
+            "properties": {
+                "manufacturer": {
+                    "type": "string",
+                    "description": "Name of the manufacturer",
+                    "example": "Breton Spa"
+                },
+                "machine_types": {
+                    "type": "array",
+                    "description": "Types of machines with detailed descriptions and supported protocols",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "example": "CNC machining centers"
+                            },
+                            "description": {
+                                "type": "string",
+                                "example": "High-precision CNC machines for stone and metalworking"
+                            },
+                            "supported_protocols": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "example": "OPC UA"
+                                }
+                            }
+                        },
+                        "required": [
+                            "type",
+                            "description",
+                            "supported_protocols"
+                        ]
+                    }
+                },
+                "applications": {
+                    "type": "array",
+                    "description": "Applications of the machines with criticality and description",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "example": "Natural stone processing"
+                            },
+                            "criticality": {
+                                "type": "string",
+                                "enum": [
+                                    "High",
+                                    "Medium",
+                                    "Low"
+                                ],
+                                "example": "High"
+                            },
+                            "description": {
+                                "type": "string",
+                                "example": "Processing marble and granite for construction"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "criticality",
+                            "description"
+                        ]
+                    }
+                },
+                "key_features": {
+                    "type": "array",
+                    "description": "Key features of the machines with cybersecurity support",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "feature": {
+                                "type": "string",
+                                "example": "High-precision CNC control systems"
+                            },
+                            "description": {
+                                "type": "string",
+                                "example": "PLC-based control systems with sub-millimeter precision"
+                            },
+                            "security_support": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "example": "Firmware signing"
+                                }
+                            }
+                        },
+                        "required": [
+                            "feature",
+                            "description",
+                            "security_support"
+                        ]
+                    }
+                },
+                "operational_environment": {
+                    "type": "object",
+                    "description": "Details of the operational environment",
+                    "properties": {
+                        "description": {
+                            "type": "string",
+                            "example": "Industrial facilities for stone and composite processing"
+                        },
+                        "conditions": {
+                            "type": "object",
+                            "properties": {
+                                "temperature_range": {
+                                    "type": "string",
+                                    "example": "5-40°C"
+                                },
+                                "dust_level": {
+                                    "type": "string",
+                                    "example": "High (stone processing environments)"
+                                },
+                                "network_type": {
+                                    "type": "string",
+                                    "example": "Segmented industrial networks"
+                                }
+                            },
+                            "required": [
+                                "temperature_range",
+                                "dust_level",
+                                "network_type"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "description",
+                        "conditions"
+                    ]
+                },
+                "industry_4_0_compliance": {
+                    "type": "boolean",
+                    "description": "Whether the machine supports Industry 4.0 features",
+                    "example": true
+                },
+                "security_profile": {
+                    "type": "object",
+                    "description": "Cybersecurity profile of the machines",
+                    "properties": {
+                        "supported_sl": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "example": "SL 1"
+                            }
+                        },
+                        "certifications": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "example": "IEC 62443-4-2"
+                            }
+                        },
+                        "common_threats": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "example": "Ransomware"
+                            }
+                        }
+                    },
+                    "required": [
+                        "supported_sl",
+                        "certifications",
+                        "common_threats"
+                    ]
+                },
+                "product_version": {
+                    "type": "object",
+                    "description": "Version and update information",
+                    "properties": {
+                        "current_version": {
+                            "type": "string",
+                            "example": "2025.1"
+                        },
+                        "last_updated": {
+                            "type": "string",
+                            "example": "2025-06-01"
+                        }
+                    },
+                    "required": [
+                        "current_version",
+                        "last_updated"
+                    ]
+                },
+                "assumptions_justifications": {
+                    "type": "array",
+                    "description": "Assumptions made in populating the JSON and their justifications",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "assumption": {
+                                "type": "string",
+                                "example": "Machines incorporate advanced automation and control systems."
+                            },
+                            "justification": {
+                                "type": "string",
+                                "example": "Based on Breton’s leadership in CNC machinery and industry standards (ISO 23125)."
+                            }
+                        },
+                        "required": [
+                            "assumption",
+                            "justification"
+                        ]
+                    }
+                }
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "required": [
+                "manufacturer",
+                "machine_types",
+                "applications",
+                "key_features",
+                "operational_environment",
+                "industry_4_0_compliance",
+                "security_profile",
+                "product_version",
+                "assumptions_justifications"
+            ]
+        },
+        "LB_Vendor_Security_Assessment_ai_step_1": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for LB Vendor Security Assessment checklist ai extension",
+            "properties": {
+                "detailed_explanation": {
+                    "type": "string"
+                },
+                "glossary": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "term": {
+                                "type": "string"
+                            },
+                            "definition": {
+                                "type": "string"
+                            },
+                            "link": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "term",
+                            "definition",
+                            "link"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "related_links": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "title": {
+                                "type": "string"
+                            },
+                            "url": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "title",
+                            "url"
+                        ],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "required": [
+                "detailed_explanation",
+                "glossary",
+                "related_links"
+            ],
+            "additionalProperties": false
+        },
+        "x_3_3_system_requirement_ai_step_1": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for IEC 62443-3-3 System Requirements - Base plus ia extensions explanation, context, challenges, ecc..",
+            "properties": {
+                "requirements": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Unique identifier for the requirement (e.g., SR 3.8)",
+                                "example": "SR 3.8"
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "Human-readable name of the requirement",
+                                "example": "Session Integrity"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Detailed description of the requirement",
+                                "example": "The control system shall provide the capability to protect the integrity of sessions..."
+                            },
+                            "rationale": {
+                                "type": "string",
+                                "description": "Purpose and security context of the requirement",
+                                "example": "This control focuses on communications protection at the session level..."
+                            },
+                            "page": {
+                                "type": "integer",
+                                "description": "Page number in the IEC 62443-3-3 standard",
+                                "example": 51
+                            },
+                            "enhancements": {
+                                "type": "array",
+                                "description": "List of requirement enhancements",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "description": "Unique identifier for the enhancement",
+                                            "example": "SR 3.8 RE 1"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "Name of the enhancement",
+                                            "example": "Invalidation of session IDs after session termination"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "description": "Description of the enhancement",
+                                            "example": "The control system shall provide the capability to invalidate session IDs upon user logout..."
+                                        },
+                                        "notes": {
+                                            "type": "array",
+                                            "description": "Additional notes or considerations",
+                                            "items": {
+                                                "type": "string",
+                                                "example": "Session hijacking and other man-in-the-middle attacks..."
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "name",
+                                        "description"
+                                    ]
+                                }
+                            },
+                            "explanation": {
+                                "type": "string",
+                                "description": "Explanation of the requirement",
+                                "example": "..."
+                            },
+                            "context": {
+                                "type": "string",
+                                "description": "Context of the requirement",
+                                "example": "..."
+                            },
+                            "challenges": {
+                                "type": "array",
+                                "description": "Challenges of the requirement",
+                                "items": {
+                                    "type": "string",
+                                    "example": "..."
+                                }
+                            },
+                            "best_practices": {
+                                "type": "array",
+                                "description": "Best practices for the requirement",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "description": {
+                                            "type": "string",
+                                            "example": "..."
+                                        },
+                                        "url": {
+                                            "type": "string",
+                                            "example": "https://example.com"
+                                        },
+                                        "url_description": {
+                                            "type": "string",
+                                            "example": "Description of the resource"
+                                        }
+                                    },
+                                    "required": [
+                                        "description"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            },
+                            "key_aspects": {
+                                "type": "array",
+                                "description": "Key aspects for the requirement",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        },
+                                        "related_links": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "title": {
+                                                        "type": "string"
+                                                    },
+                                                    "url": {
+                                                        "type": "string"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "title",
+                                                    "url",
+                                                    "description"
+                                                ],
+                                                "additionalProperties": false
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "title",
+                                        "description",
+                                        "related_links"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            },
+                            "security_levels": {
+                                "type": "array",
+                                "description": "Mapping of security levels to requirement and enhancements",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "level": {
+                                            "type": "string",
+                                            "description": "Security level (e.g., SL-C 1)",
+                                            "example": "SL-C 1"
+                                        },
+                                        "applicability": {
+                                            "type": "string",
+                                            "description": "Requirement or enhancements applicable at this level",
+                                            "example": "Not Selected"
+                                        }
+                                    },
+                                    "required": [
+                                        "level",
+                                        "applicability"
+                                    ]
+                                }
+                            },
+                            "compliance": {
+                                "type": "object",
+                                "description": "Compliance and testing details",
+                                "properties": {
+                                    "status": {
+                                        "type": "string",
+                                        "description": "Compliance status (e.g., Implemented, In Progress, Not Started)",
+                                        "example": "Not Started"
+                                    },
+                                    "last_audit": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "description": "Timestamp of the last compliance audit",
+                                        "example": "2025-08-04T09:49:00Z"
+                                    },
+                                    "testing_requirements": {
+                                        "type": "array",
+                                        "description": "Required tests to verify compliance",
+                                        "items": {
+                                            "type": "string",
+                                            "example": "Penetration testing for session hijacking"
+                                        }
+                                    },
+                                    "responsible_team": {
+                                        "type": "string",
+                                        "description": "Team responsible for implementation and compliance",
+                                        "example": "Security Engineering"
+                                    }
+                                }
+                            },
+                            "metadata": {
+                                "type": "object",
+                                "description": "Metadata for versioning and auditing",
+                                "properties": {
+                                    "version": {
+                                        "type": "string",
+                                        "description": "Version of the requirement entry",
+                                        "example": "1.0.0"
+                                    },
+                                    "created_at": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "description": "Timestamp of entry creation",
+                                        "example": "2025-08-04T09:49:00Z"
+                                    },
+                                    "updated_at": {
+                                        "type": "string",
+                                        "format": "date-time",
+                                        "description": "Timestamp of last update",
+                                        "example": "2025-08-04T09:49:00Z"
+                                    },
+                                    "author": {
+                                        "type": "string",
+                                        "description": "Person or team who created/updated the entry",
+                                        "example": "Security Team"
+                                    }
+                                },
+                                "required": [
+                                    "version",
+                                    "created_at",
+                                    "updated_at"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "description",
+                            "rationale",
+                            "page",
+                            "standard",
+                            "explanation",
+                            "context",
+                            "challenges",
+                            "best_practices",
+                            "security_levels",
+                            "compliance"
+                        ]
+                    }
+                }
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "required": [
+                "requirements"
+            ]
+        },
+        "x_3_3_system_requirement_ai_step_2": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for IEC 62443-3-3 System Requirements - Key properties plus ia extensions `implementations` examples",
+            "properties": {
+                "requirements": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Unique identifier for the requirement (e.g., SR 3.8)",
+                                "example": "SR 3.8"
+                            },
+                            "implementations": {
+                                "type": "array",
+                                "description": "Examples of implementation for the requirement or enhancements",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "context": {
+                                            "type": "string",
+                                            "description": "Context or use case for the implementation",
+                                            "example": "SCADA system for a water treatment plant"
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "description": "Detailed description of the implementation",
+                                            "example": "Deploy TLS 1.3 to secure all session-based communications..."
+                                        },
+                                        "tools": {
+                                            "type": "array",
+                                            "description": "Tools used in the implementation",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "OpenSSL"
+                                                    },
+                                                    "purpose": {
+                                                        "type": "string",
+                                                        "example": "For implementing TLS 1.3 and managing session tickets"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "name",
+                                                    "purpose"
+                                                ]
+                                            }
+                                        },
+                                        "challenges_addressed": {
+                                            "type": "array",
+                                            "description": "Challenges addressed by the implementation",
+                                            "items": {
+                                                "type": "string",
+                                                "example": "Mitigates MITM attacks"
+                                            }
+                                        },
+                                        "applies_to": {
+                                            "type": "string",
+                                            "description": "Specifies if the implementation applies to the main requirement or a specific RE",
+                                            "example": "SR 3.8"
+                                        }
+                                    },
+                                    "required": [
+                                        "context",
+                                        "description",
+                                        "applies_to"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "implementations"
+                        ]
+                    }
+                }
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "required": [
+                "requirements"
+            ]
+        },
+        "x_3_3_system_requirement_ai_step_3": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for IEC 62443-3-3 System Requirements - Key properties plus ia extensions `policy_template` end `procedure_template`",
+            "properties": {
+                "policy_template": {
+                    "type": "object",
+                    "description": "Template for Security Policy.",
+                    "properties": {
+                        "title": {
+                            "type": "string",
+                            "description": "Title of the policy.",
+                            "example": "Deterministic Output Security Policy"
+                        },
+                        "purpose": {
+                            "type": "string",
+                            "description": "Purpose of the policy, outlining its objective.",
+                            "example": "To define the requirements for ensuring ..."
+                        },
+                        "scope": {
+                            "type": "string",
+                            "description": "Scope of the policy, specifying applicable systems.",
+                            "example": "Applies to all ..."
+                        },
+                        "policy_statements": {
+                            "type": "array",
+                            "description": "List of policy statements defining requirements for SR compliance.",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Unique identifier for the policy statement.",
+                                        "example": "PS1"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Human-readable name of the policy statement.",
+                                        "example": "Fail-Safe Configuration"
+                                    },
+                                    "description": {
+                                        "type": "array",
+                                        "description": "Detailed description of the policy statement, including placeholders for engineering input.",
+                                        "items": {
+                                            "type": "string",
+                                            "example": "All control systems shall be configured to ..."
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "id",
+                                    "name",
+                                    "description"
+                                ]
+                            }
+                        },
+                        "approval": {
+                            "type": "object",
+                            "description": "Details for policy approval and review process.",
+                            "properties": {
+                                "policy_owner": {
+                                    "type": "string",
+                                    "description": "Placeholder for the policy owner.",
+                                    "example": "[Engineering Team to specify: e.g., Head of Engineering]"
+                                },
+                                "review_frequency": {
+                                    "type": "string",
+                                    "description": "Placeholder for the frequency of policy review.",
+                                    "example": "[Engineering Team to specify: e.g., annually or upon system updates]"
+                                },
+                                "last_reviewed": {
+                                    "type": "string",
+                                    "description": "Placeholder for the date of the last review.",
+                                    "example": "[Engineering Team to insert: date]"
+                                }
+                            },
+                            "required": [
+                                "policy_owner",
+                                "review_frequency",
+                                "last_reviewed"
+                            ]
+                        },
+                        "verification_checklist": {
+                            "type": "array",
+                            "description": "Checklist of tasks for engineers to verify and complete the policy.",
+                            "items": {
+                                "type": "string",
+                                "example": "Confirm predetermined output states (unpowered, hold, fixed) for each machine type."
+                            }
+                        }
+                    },
+                    "required": [
+                        "title",
+                        "purpose",
+                        "scope",
+                        "policy_statements",
+                        "approval",
+                        "verification_checklist"
+                    ]
+                },
+                "procedure_template": {
+                    "type": "object",
+                    "description": "Template for Procedure.",
+                    "properties": {
+                        "title": {
+                            "type": "string",
+                            "description": "Title of the procedure.",
+                            "example": "Deterministic Output Implementation and Testing Procedure"
+                        },
+                        "purpose": {
+                            "type": "string",
+                            "description": "Purpose of the procedure, outlining its objective.",
+                            "example": "To provide a step-by-step process for ..."
+                        },
+                        "scope": {
+                            "type": "string",
+                            "description": "Scope of the procedure, specifying applicable systems.",
+                            "example": "Applies to the ..."
+                        },
+                        "prerequisites": {
+                            "type": "array",
+                            "description": "List of prerequisites needed before executing the procedure.",
+                            "items": {
+                                "type": "string",
+                                "example": "Control system firmware updated to [Engineering Team to specify: e.g., latest version]."
+                            }
+                        },
+                        "procedure_steps": {
+                            "type": "array",
+                            "description": "List of steps to implement and test deterministic output behavior.",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "step_id": {
+                                        "type": "string",
+                                        "description": "Unique identifier for the procedure step.",
+                                        "example": "S1"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Human-readable name of the procedure step.",
+                                        "example": "Define Predetermined Output States"
+                                    },
+                                    "description": {
+                                        "type": "array",
+                                        "description": "Detailed description of the procedure step, including placeholders for engineering input.",
+                                        "items": {
+                                            "type": "string",
+                                            "example": "Identify the appropriate ..."
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "step_id",
+                                    "name",
+                                    "description"
+                                ]
+                            }
+                        },
+                        "tools_required": {
+                            "type": "array",
+                            "description": "List of tools required for the procedure, with placeholders for specific tools.",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Name of the tool category.",
+                                        "example": "Control System Software"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Placeholder for specific tool details.",
+                                        "example": "[Engineering Team to specify: e.g., Siemens SINUMERIK, Beckhoff TwinCAT]"
+                                    }
+                                },
+                                "required": [
+                                    "name",
+                                    "description"
+                                ]
+                            }
+                        },
+                        "challenges_addressed": {
+                            "type": "array",
+                            "description": "List of challenges addressed by the procedure.",
+                            "items": {
+                                "type": "string",
+                                "example": "Ensures equipment and operator safety during cyberattacks."
+                            }
+                        },
+                        "verification_checklist": {
+                            "type": "array",
+                            "description": "Checklist of tasks for engineers to verify and complete the procedure.",
+                            "items": {
+                                "type": "string",
+                                "example": "Define and document fail-safe states for each machine type."
+                            }
+                        }
+                    },
+                    "required": [
+                        "title",
+                        "purpose",
+                        "scope",
+                        "prerequisites",
+                        "procedure_steps",
+                        "tools_required",
+                        "challenges_addressed",
+                        "verification_checklist"
+                    ]
+                }
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "required": [
+                "policy_template",
+                "procedure_template"
+            ]
+        },
+        "x_4_1_process_ai_step_2": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for IEC 62443-4-1 Processes - Base plus ia extensions explanation, context, challenges, ecc..",
+            "properties": {
+                "practice": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "string"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "explanation": {
+                    "type": "string",
+                    "description": "Explanation of the requirement",
+                    "example": "..."
+                },
+                "context": {
+                    "type": "string",
+                    "description": "Context of the requirement",
+                    "example": "..."
+                },
+                "challenges": {
+                    "type": "array",
+                    "description": "Challenges of the requirement",
+                    "items": {
+                        "type": "string",
+                        "example": "..."
+                    }
+                },
+                "best_practices": {
+                    "type": "array",
+                    "description": "Best practices for the process",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "description": {
+                                "type": "string",
+                                "example": "..."
+                            },
+                            "url": {
+                                "type": "string",
+                                "example": "https://example.com"
+                            },
+                            "url_description": {
+                                "type": "string",
+                                "example": "Description of the resource"
+                            }
+                        },
+                        "required": [
+                            "description"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "key_aspects": {
+                    "type": "array",
+                    "description": "Key aspects for the process",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "related_links": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "description": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "title",
+                                        "url",
+                                        "description"
+                                    ],
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "title",
+                            "description",
+                            "related_links"
+                        ],
+                        "additionalProperties": false
+                    }
+                },
+                "note_su_json_risultante": {
+                    "type": "object",
+                    "description": "Notes on the resulting JSON structure and implementation details",
+                    "properties": {
+                        "description": {
+                            "type": "string",
+                            "description": "General description of the notes section",
+                            "example": "Notes on the resulting JSON structure and implementation details"
+                        },
+                        "notes": {
+                            "type": "array",
+                            "description": "List of specific notes on the JSON and implementations",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "note_id": {
+                                        "type": "string",
+                                        "description": "Unique identifier for the note",
+                                        "example": "N1"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "description": "Detailed description of the note",
+                                        "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                    }
+                                },
+                                "required": [
+                                    "note_id",
+                                    "description"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "description",
+                        "notes"
+                    ]
+                }
+            },
+            "required": [
+                "practice",
+                "code",
+                "subCode",
+                "explanation",
+                "context",
+                "challenges",
+                "best_practices",
+                "key_aspects"
+            ],
+            "additionalProperties": false
+        },
+        "x_4_1_process_ai_step_3": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for IEC 62443-4-1 Processes - Key properties plus ia extensions `details`",
+            "properties": {
+                "practice": {
+                    "type": "string",
+                    "description": "Numeric identifier of the practice within IEC 62443-4-1",
+                    "pattern": "^[0-9]+$"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Alphanumeric code for the practice (e.g., SG-7, SM-5)",
+                    "pattern": "^[A-Z]{2}-[0-9]+$"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the practice (e.g., Documentation review)",
+                    "minLength": 1
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Detailed description of the practice as per IEC 62443-4-1",
+                    "minLength": 1
+                },
+                "details": {
+                    "type": "object",
+                    "description": "Detailed information addressing key aspects of the practice",
+                    "required": [
+                        "risk_assessment_and_threat_modeling",
+                        "audit_and_compliance_verification",
+                        "training_and_competency_requirements",
+                        "tooling_and_automation_support",
+                        "handling_legacy_systems_and_constraints",
+                        "stakeholder_collaboration_and_governance",
+                        "continuous_improvement_and_updates"
+                    ],
+                    "properties": {
+                        "risk_assessment_and_threat_modeling": {
+                            "type": "object",
+                            "description": "Details for risk assessment and threat modeling related to the practice",
+                            "required": [
+                                "why",
+                                "methodologies",
+                                "tools",
+                                "case_study"
+                            ],
+                            "properties": {
+                                "why": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "methodologies": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "description"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "additionalProperties": false
+                                    },
+                                    "minItems": 1
+                                },
+                                "tools": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "purpose"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "purpose": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "additionalProperties": false
+                                    },
+                                    "minItems": 1
+                                },
+                                "case_study": {
+                                    "type": "object",
+                                    "required": [
+                                        "example"
+                                    ],
+                                    "properties": {
+                                        "example": {
+                                            "type": "string",
+                                            "minLength": 1
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "audit_and_compliance_verification": {
+                            "type": "object",
+                            "description": "Details for auditing and verifying compliance with the practice",
+                            "required": [
+                                "why",
+                                "audit_checklist",
+                                "metrics",
+                                "compliance_procedure"
+                            ],
+                            "properties": {
+                                "why": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "audit_checklist": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "minLength": 1
+                                    },
+                                    "minItems": 1
+                                },
+                                "metrics": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "kpi",
+                                            "target"
+                                        ],
+                                        "properties": {
+                                            "kpi": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "target": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "additionalProperties": false
+                                    },
+                                    "minItems": 1
+                                },
+                                "compliance_procedure": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "training_and_competency_requirements": {
+                            "type": "object",
+                            "description": "Details for training and competency requirements",
+                            "required": [
+                                "why",
+                                "training_programs",
+                                "competency_assessment"
+                            ],
+                            "properties": {
+                                "why": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "training_programs": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "description"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "additionalProperties": false
+                                    },
+                                    "minItems": 1
+                                },
+                                "competency_assessment": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "tooling_and_automation_support": {
+                            "type": "object",
+                            "description": "Details for tools and automation supporting the practice",
+                            "required": [
+                                "why",
+                                "tools",
+                                "automation_strategy"
+                            ],
+                            "properties": {
+                                "why": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "tools": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "name",
+                                            "purpose"
+                                        ],
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "purpose": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "additionalProperties": false
+                                    },
+                                    "minItems": 1
+                                },
+                                "automation_strategy": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "handling_legacy_systems_and_constraints": {
+                            "type": "object",
+                            "description": "Details for addressing legacy systems in the practice",
+                            "required": [
+                                "why",
+                                "strategies",
+                                "example_policy"
+                            ],
+                            "properties": {
+                                "why": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "strategies": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "approach",
+                                            "description"
+                                        ],
+                                        "properties": {
+                                            "approach": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "additionalProperties": false
+                                    },
+                                    "minItems": 1
+                                },
+                                "example_policy": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "stakeholder_collaboration_and_governance": {
+                            "type": "object",
+                            "description": "Details for stakeholder collaboration and governance",
+                            "required": [
+                                "why",
+                                "governance_model",
+                                "conflict_resolution"
+                            ],
+                            "properties": {
+                                "why": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "governance_model": {
+                                    "type": "object",
+                                    "required": [
+                                        "name",
+                                        "roles"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "minLength": 1
+                                        },
+                                        "roles": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "required": [
+                                                    "role",
+                                                    "responsibility"
+                                                ],
+                                                "properties": {
+                                                    "role": {
+                                                        "type": "string",
+                                                        "minLength": 1
+                                                    },
+                                                    "responsibility": {
+                                                        "type": "string",
+                                                        "minLength": 1
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            },
+                                            "minItems": 1
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "conflict_resolution": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "continuous_improvement_and_updates": {
+                            "type": "object",
+                            "description": "Details for continuous improvement and policy updates",
+                            "required": [
+                                "why",
+                                "update_process",
+                                "lessons_learned"
+                            ],
+                            "properties": {
+                                "why": {
+                                    "type": "string",
+                                    "minLength": 1
+                                },
+                                "update_process": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "required": [
+                                            "step",
+                                            "description"
+                                        ],
+                                        "properties": {
+                                            "step": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "minLength": 1
+                                            }
+                                        },
+                                        "additionalProperties": false
+                                    },
+                                    "minItems": 1
+                                },
+                                "lessons_learned": {
+                                    "type": "string",
+                                    "minLength": 1
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "standard_compliance": {
+                    "type": "string",
+                    "description": "Reference to the IEC 62443-4-1 standard",
+                    "enum": [
+                        "IEC 62443-4-1"
+                    ]
+                },
+                "last_updated": {
+                    "type": "string",
+                    "description": "Date of last update in YYYY-MM-DD format",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                }
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "required": [
+                "practice",
+                "code",
+                "subCode",
+                "name",
+                "description",
+                "details",
+                "standard_compliance",
+                "last_updated"
+            ],
+            "additionalProperties": false
+        },
+        "x_4_1_process_ai_step_4": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for IEC 62443-4-1 Processes - Key properties plus ia extensions `policies` and `procedures`",
+            "required": [
+                "practice",
+                "code",
+                "subCode",
+                "name",
+                "description",
+                "details",
+                "standard_compliance",
+                "last_updated"
+            ],
+            "properties": {
+                "practice": {
+                    "type": "string",
+                    "description": "Numeric identifier of the practice within IEC 62443-4-1",
+                    "pattern": "^[0-9]+$"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Alphanumeric code for the practice (e.g., SG-7, SM-5)",
+                    "pattern": "^[A-Z]{2}-[0-9]+$"
+                },
+                "subCode": {
+                    "type": "string"
+                },
+                "policies": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "subCode": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "enforcement": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "procedures": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "subCode": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "steps": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "step": {
+                                            "type": "integer"
+                                        },
+                                        "action": {
+                                            "type": "string"
+                                        },
+                                        "tools": {
+                                            "type": "string"
+                                        },
+                                        "expected_outcome": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "last_updated": {
+                    "type": "string",
+                    "description": "Date of last update in YYYY-MM-DD format",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                }
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "additionalProperties": false
+        },
+        "x_4_1_specific_practice_ai_detail": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "type": "object",
+            "description": "JSON schema for IEC 62443-4-1 specific practice detailed ai extension",
+            "properties": {
+                "Practice": {
+                    "type": "object",
+                    "properties": {
+                        "Name": {
+                            "type": "string",
+                            "description": "Nome della pratica specifica secondo IEC 62443-4-1."
+                        },
+                        "Description": {
+                            "type": "string",
+                            "description": "Descrizione della pratica e del suo scopo."
+                        },
+                        "Objective": {
+                            "type": "string",
+                            "description": "Obiettivo principale della pratica."
+                        },
+                        "IEC62443References": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Riferimenti alle sezioni rilevanti dello standard IEC 62443."
+                        },
+                        "KeyActivities": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Attività principali per implementare la pratica."
+                        },
+                        "Benefits": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Vantaggi derivanti dall'applicazione della pratica."
+                        },
+                        "LifecyclePhases": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Fasi del ciclo di vita del prodotto in cui la pratica è applicabile."
+                        }
+                    },
+                    "required": [
+                        "Name",
+                        "Description",
+                        "Objective",
+                        "IEC62443References",
+                        "KeyActivities",
+                        "Benefits",
+                        "LifecyclePhases"
+                    ]
+                },
+                "Context": {
+                    "type": "object",
+                    "properties": {
+                        "Manufacturer": {
+                            "type": "string"
+                        },
+                        "MachineTypes": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "Type": {
+                                        "type": "string"
+                                    },
+                                    "SupportedProtocols": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Applications": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "Name": {
+                                        "type": "string"
+                                    },
+                                    "Criticality": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        },
+                        "OperationalEnvironment": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "Contesto operativo in cui la pratica viene applicata."
+                },
+                "GuidanceDetails": {
+                    "type": "object",
+                    "properties": {
+                        "ImplementationGuidance": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Linee guida dettagliate per l'implementazione della pratica."
+                        },
+                        "ToolsAndTechniques": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Strumenti e tecniche consigliati per eseguire la pratica."
+                        },
+                        "Challenges": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Sfide comuni, incluse quelle specifiche per sistemi legacy."
+                        },
+                        "MitigationStrategies": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Strategie per superare le sfide identificate."
+                        }
+                    },
+                    "required": [
+                        "ImplementationGuidance",
+                        "ToolsAndTechniques",
+                        "Challenges",
+                        "MitigationStrategies"
+                    ]
+                },
+                "AuthoritativeSources": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "SourceName": {
+                                "type": "string"
+                            },
+                            "Description": {
+                                "type": "string"
+                            },
+                            "URL": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "SourceName",
+                            "Description",
+                            "URL"
+                        ]
+                    },
+                    "description": "Fonti autorevoli per approfondimenti sulla pratica."
+                },
+                "Examples": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Esempi pratici di applicazione della pratica in contesti ICS."
+                },
+                "ReportTemplate": {
+                    "type": "object",
+                    "properties": {
+                        "Title": {
+                            "type": "string"
+                        },
+                        "Sections": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "SectionName": {
+                                        "type": "string"
+                                    },
+                                    "Description": {
+                                        "type": "string"
+                                    },
+                                    "Content": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "description": "Template per il report generato dalla pratica."
+                }
+            },
+            "note_su_json_risultante": {
+                "type": "object",
+                "description": "Notes on the resulting JSON structure and implementation details",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "description": "General description of the notes section",
+                        "example": "Notes on the resulting JSON structure and implementation details"
+                    },
+                    "notes": {
+                        "type": "array",
+                        "description": "List of specific notes on the JSON and implementations",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "note_id": {
+                                    "type": "string",
+                                    "description": "Unique identifier for the note",
+                                    "example": "N1"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "Detailed description of the note",
+                                    "example": "The implementations were tailored to Breton Spa’s machine types..."
+                                }
+                            },
+                            "required": [
+                                "note_id",
+                                "description"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "description",
+                    "notes"
+                ]
+            },
+            "required": [
+                "Practice",
+                "Context",
+                "GuidanceDetails",
+                "AuthoritativeSources",
+                "Examples",
+                "ReportTemplate"
+            ]
+        },
+        "llm_assisted_threat_modeling": {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "Schema per il Threat Modeling Assistito da LLM",
+            "description": "Schema JSON per raccogliere informazioni per il threat modeling assistito da LLM per una macchina IACS, allineato a IEC 62443-4-1 SM-3 e SAMM Maturity Level 3.",
+            "type": "object",
+            "properties": {
+                "machine": {
+                    "type": "object",
+                    "description": "Informazioni sulla macchina IACS.",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "Nome della macchina (es. 'Controllore Robot Industriale')."
+                        },
+                        "intended_use": {
+                            "type": "string",
+                            "description": "Uso previsto (es. 'Controllo robot in manifattura')."
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "intended_use"
+                    ]
+                },
+                "components": {
+                    "type": "array",
+                    "description": "Tipi di componenti nella macchina.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Nome del componente (es. 'Microcontrollore')."
+                            },
+                            "type": {
+                                "type": "string",
+                                "description": "Tipo di componente secondo IEC 62443-4-2.",
+                                "enum": [
+                                    "embedded_device",
+                                    "host_device",
+                                    "network_device",
+                                    "application"
+                                ]
+                            },
+                            "role": {
+                                "type": "string",
+                                "description": "Ruolo nella macchina (es. 'Controllo motori')."
+                            },
+                            "interfaces": {
+                                "type": "array",
+                                "description": "Interfacce (es. 'Modbus/TCP').",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "data_flows": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "from": {
+                                            "type": "string",
+                                            "description": "Origine del flusso (es. 'Onboard Server')."
+                                        },
+                                        "to": {
+                                            "type": "string",
+                                            "description": "Destinazione del flusso (es. 'Microcontroller')."
+                                        },
+                                        "protocol": {
+                                            "type": "string",
+                                            "description": "Protocollo (es. 'Modbus/TCP')."
+                                        },
+                                        "security": {
+                                            "type": "string",
+                                            "description": "Meccanismo di sicurezza (es. 'TLS 1.3')."
+                                        }
+                                    },
+                                    "required": [
+                                        "from",
+                                        "to",
+                                        "protocol",
+                                        "security"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "type",
+                            "role",
+                            "interfaces",
+                            "data_flows"
+                        ]
+                    },
+                    "minItems": 1
+                },
+                "llm_configuration": {
+                    "type": "object",
+                    "description": "Configurazione per l'LLM utilizzato nel threat modeling.",
+                    "properties": {
+                        "model": {
+                            "type": "string",
+                            "description": "Nome del modello LLM (es. 'Grok 3'",
+                            "example": "'GPT-4')."
+                        },
+                        "api_endpoint": {
+                            "type": "string",
+                            "description": "Endpoint API dell'LLM (es. 'https://api.xai.com/grok')."
+                        },
+                        "prompt_template": {
+                            "type": "string",
+                            "description": "Template del prompt per l'LLM."
+                        },
+                        "threat_library": {
+                            "type": "array",
+                            "description": "Fonti di threat intelligence (es. 'MITRE ATT&CK ICS').",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "model",
+                        "api_endpoint",
+                        "prompt_template",
+                        "threat_library"
+                    ]
+                },
+                "threat_model": {
+                    "type": "array",
+                    "description": "Risultati del threat modeling per ciascun componente.",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "component_name": {
+                                "type": "string",
+                                "description": "Nome del componente."
+                            },
+                            "threats": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "threat_type": {
+                                            "type": "string",
+                                            "description": "Tipo di minaccia (es. 'Tampering')."
+                                        },
+                                        "description": {
+                                            "type": "string",
+                                            "description": "Descrizione della minaccia."
+                                        },
+                                        "cr_mapping": {
+                                            "type": "string",
+                                            "description": "CR di IEC 62443-4-2 (es. 'CR 3.2')."
+                                        },
+                                        "mitigation": {
+                                            "type": "string",
+                                            "description": "Mitigazione proposta."
+                                        },
+                                        "risk_level": {
+                                            "type": "string",
+                                            "description": "Livello di rischio.",
+                                            "enum": [
+                                                "Low",
+                                                "Medium",
+                                                "High"
+                                            ]
+                                        },
+                                        "sl_c": {
+                                            "type": "string",
+                                            "description": "Livello di sicurezza delle capacità.",
+                                            "enum": [
+                                                "SL-C 0",
+                                                "SL-C 1",
+                                                "SL-C 2",
+                                                "SL-C 3",
+                                                "SL-C 4"
+                                            ]
+                                        },
+                                        "metric": {
+                                            "type": "string",
+                                            "description": "Metrica quantitativa (es. 'Detection < 10ms')."
+                                        }
+                                    },
+                                    "required": [
+                                        "threat_type",
+                                        "description",
+                                        "cr_mapping",
+                                        "mitigation",
+                                        "risk_level",
+                                        "sl_c",
+                                        "metric"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "component_name",
+                            "threats"
+                        ]
+                    },
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "machine",
+                "components",
+                "llm_configuration",
+                "threat_model"
+            ]
+        }
+    }
+}

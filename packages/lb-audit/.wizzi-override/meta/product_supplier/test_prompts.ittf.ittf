@@ -1,0 +1,44 @@
+ittf
+    $
+        var x_options = {
+            step_1_JSONSchema: _.stringify(wzCtx.schemas.product_supplier_ai_step_1, null, null),
+            step_2_JSONSchema: _.stringify(wzCtx.schemas.product_supplier_ai_step_2, null, null),
+        }        
+
+    $file .wizzi-override/docs/product_supplier/from_meta/product_suppliers_search_prompts.txt.ittf
+
+        txt 
+            $foreach aiItem in wzCtx.root_prompts.product_suppliers_search.items
+                $ 
+                    var options = {
+                        inputJSON: aiItem,
+                        inputJSONString: _.stringify(aiItem, null, null),
+                        JSONSchema: x_options.step_1_JSONSchema,
+                    }
+                =====
+                search product supplier of location ${aiItem.location}
+                -----
+                ai/product_supplier_search( &options, prompt )
+                ai/schema_data_return( &options, prompt )
+
+    $file .wizzi-override/docs/product_supplier/from_meta/product_suppliers_machines_prompts.txt.ittf
+        txt 
+            $foreach psGroup in product_supplier_ai_step_1_out.items
+                $foreach psItem in psGroup.items
+                    $ 
+                        var options = {
+                            inputJSON: psItem,
+                            inputJSONString: _.stringify(psItem, null, null),
+                            product_supplier_JSON: null,
+                            JSONSchema: x_options.step_2_JSONSchema,
+                        }
+                    =====
+                    producer ${psItem.name}
+                    -----
+                    Popola un database JSON con dati dettagliati che descrivano i componenti e il contesto di sistema
+                    delle macchine costruite dal produttore specificato nel JSON fornito con dati di input.
+                    Il risultato sarà utilizzato come dato di contesto per creare policies ed 
+                    esempi di applicazione dei requisiti IEC 62443-3-3 e IEC 62443-4-2
+                    per supportare lo sviluppo sicuro delle macchine.
+                    ai/product_supplier_machines( &options, prompt )
+                    ai/schema_data_return( &options, prompt )
